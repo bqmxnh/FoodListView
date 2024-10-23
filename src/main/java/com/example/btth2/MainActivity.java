@@ -34,9 +34,9 @@ public class MainActivity extends AppCompatActivity {
     private List<Food> getFoodList() {
         // Thêm dữ liệu cho món ăn kèm theo ID của hình ảnh
         List<Food> foods = new ArrayList<>();
-        foods.add(new Food(1, "Món mặn", "5 sản phẩm, 5 đang giảm giá", R.drawable.mon_man));
-        foods.add(new Food(2, "Món canh", "10 sản phẩm, 10 đang giảm giá", R.drawable.mon_canh));
-        foods.add(new Food(3, "Món xào", "10 sản phẩm, 10 đang giảm giá", R.drawable.mon_xao));
+        foods.add(new Food(1, "Món mặn", 5, 5, R.drawable.mon_man));
+        foods.add(new Food(2, "Món canh", 10, 10 , R.drawable.mon_canh));
+        foods.add(new Food(3, "Món xào", 10, 10 , R.drawable.mon_xao));
         return foods;
     }
 

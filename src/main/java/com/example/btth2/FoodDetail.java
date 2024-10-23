@@ -5,16 +5,19 @@ public class FoodDetail {
     private String price;
     private String oldPrice;
     private float rating;
-    private int imageResourceId; // Thêm hình ảnh
+    private int imageResourceId;
+    private String category; // Thêm thuộc tính category
 
-    public FoodDetail(String name, String price, String oldPrice, float rating, int imageResourceId) {
+    public FoodDetail(String name, String price, String oldPrice, float rating, int imageResourceId, String category) {
         this.name = name;
         this.price = price;
         this.oldPrice = oldPrice;
         this.rating = rating;
-        this.imageResourceId = imageResourceId; // Lưu ID của hình ảnh
+        this.imageResourceId = imageResourceId;
+        this.category = category; // Cập nhật constructor
     }
 
+    // Các getter đã có
     public String getName() {
         return name;
     }
@@ -32,8 +35,11 @@ public class FoodDetail {
     }
 
     public int getImageResourceId() {
-        return imageResourceId; // Trả về ID của hình ảnh
+        return imageResourceId;
+    }
+
+    // Getter cho category
+    public String getCategory() {
+        return category;
     }
 }
-
-

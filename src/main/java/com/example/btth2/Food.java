@@ -3,16 +3,19 @@ package com.example.btth2;
 public class Food {
     private int id;
     private String name;
-    private String description;
-    private int imageResourceId; // Thêm hình ảnh
+    private int productCount;  // Số sản phẩm
+    private int discountCount; // Số sản phẩm đang giảm giá
+    private int imageResourceId;
 
-    public Food(int id, String name, String description, int imageResourceId) {
+    public Food(int id, String name, int productCount, int discountCount, int imageResourceId) {
         this.id = id;
         this.name = name;
-        this.description = description;
-        this.imageResourceId = imageResourceId; // Lưu ID của hình ảnh
+        this.productCount = productCount;
+        this.discountCount = discountCount;
+        this.imageResourceId = imageResourceId;
     }
 
+    // Getters
     public int getId() {
         return id;
     }
@@ -21,14 +24,36 @@ public class Food {
         return name;
     }
 
-    public String getDescription() {
-        return description;
+    public int getProductCount() {
+        return productCount;
+    }
+
+    public int getDiscountCount() {
+        return discountCount;
     }
 
     public int getImageResourceId() {
-        return imageResourceId; // Trả về ID của hình ảnh
+        return imageResourceId;
+    }
+
+    // Setters
+    public void setId(int id) {
+        this.id = id;
+    }
+
+    public void setName(String name) {
+        this.name = name;
+    }
+
+    public void setProductCount(int productCount) {
+        this.productCount = productCount;
+    }
+
+    public void setDiscountCount(int discountCount) {
+        this.discountCount = discountCount;
+    }
+
+    public void setImageResourceId(int imageResourceId) {
+        this.imageResourceId = imageResourceId;
     }
 }
-
-
-

@@ -33,17 +33,29 @@ public class FoodAdapter extends RecyclerView.Adapter<FoodAdapter.FoodViewHolder
     @Override
     public void onBindViewHolder(@NonNull FoodViewHolder holder, int position) {
         Food food = foodList.get(position);
-        holder.txtFoodName.setText(food.getName());
-        holder.txtFoodDesc.setText(food.getDescription());
-        holder.imgFood.setImageResource(food.getImageResourceId()); // Hiển thị hình ảnh món ăn
 
+        // Set food name
+        holder.txtFoodName.setText(food.getName());
+
+        // Set product count
+        String productText = String.format("%d sản phẩm", food.getProductCount());
+        holder.txtProductCount.setText(productText);
+
+        // Set discount count
+        String discountText = String.format("%d đang giảm giá", food.getDiscountCount());
+        holder.txtDiscountCount.setText(discountText);
+
+        // Set food image
+        holder.imgFood.setImageResource(food.getImageResourceId());
+
+        // Handle item click
         holder.itemView.setOnClickListener(v -> {
             Intent intent = new Intent(context, DetailActivity.class);
             intent.putExtra("foodId", food.getId());
+            intent.putExtra("foodCategory", food.getName());
             context.startActivity(intent);
         });
     }
-
 
     @Override
     public int getItemCount() {
@@ -51,15 +63,15 @@ public class FoodAdapter extends RecyclerView.Adapter<FoodAdapter.FoodViewHolder
     }
 
     public static class FoodViewHolder extends RecyclerView.ViewHolder {
-        TextView txtFoodName, txtFoodDesc;
+        TextView txtFoodName, txtProductCount, txtDiscountCount;
         ImageView imgFood;
 
         public FoodViewHolder(@NonNull View itemView) {
             super(itemView);
             txtFoodName = itemView.findViewById(R.id.txt_food_name);
-            txtFoodDesc = itemView.findViewById(R.id.txt_food_desc);
+            txtProductCount = itemView.findViewById(R.id.txt_product_count);
+            txtDiscountCount = itemView.findViewById(R.id.txt_discount_count);
             imgFood = itemView.findViewById(R.id.img_food);
         }
     }
 }
-
